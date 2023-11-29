@@ -1,9 +1,19 @@
 <script setup>
 
 import { useForm, useField } from 'vee-validate'
-import {validationSchema, imageSchema} from'@/validation/librosSchema'
+import { collection,addDoc } from 'firebase/firestore' 
+import { useFirestore } from 'vuefire'
+import { useRouter } from 'vue-router'
+import { validationSchema, imageSchema } from'@/validation/librosSchema'
+import useImage from '@/composables/useImage'
 
 const items = ["Legal", "Salud", "Empresarial"]
+
+const  {url, uploadImage, image } = useImage()
+
+const router = useRouter()
+const db = useFirestore()
+
 const {handleSubmit} = useForm({
     validationSchema:{
         ...validationSchema,
@@ -12,11 +22,25 @@ const {handleSubmit} = useForm({
 })
 
 const titulo = useField('titulo')
-const area = useField('area')
+const autor = useField('autor')
+const imagen = useField('imagen')
+const area = useField('area',null,
+{
+    initialValue:  false
+}
+)
 
 
-const submit = handleSubmit((values) =>{
-console.log(values)
+const submit = handleSubmit(async(values) =>{
+    const { imagen, ...libro} = values
+    
+const docRef = await addDoc(collection(db, "libro"),{
+   ...libro,
+   image : url.value
+});
+if(docRef.id){
+    router.push({name:'admin-propiedades'})
+}
 })
 </script>
     
@@ -45,6 +69,8 @@ console.log(values)
             <v-text-field 
             class="mb-5" 
             label="Autor" 
+            v-model="autor.value.value"
+            :error-messages="autor.errorMessage.value" 
             />
             <v-row>
     <!-- Columna de la imagen -->
@@ -54,7 +80,14 @@ console.log(values)
             label="Portada" 
             prepend-icon="mdi-camera" 
             class="mb-5"
-        />
+            v-model="imagen.value.value"
+            :error-messages="imagen.errorMessage.value" 
+            @change="uploadImage"
+            />
+            <div v-if="image" class="my-5">
+                <p class="font-weight-bold"> Imagen Libro</p>
+                <img class = "w-50" :src="image">
+            </div>
     </v-col>
     
     <!-- Columnas de los checkboxes -->
