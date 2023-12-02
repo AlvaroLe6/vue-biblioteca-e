@@ -17,7 +17,7 @@ export default function useImage() {
         if(data){
             upload(data)
         }
-      
+       
     }
     const image = computed (() => {
         return url.value ? url.value : null

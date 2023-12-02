@@ -16,8 +16,9 @@ const auth = useAuthStore()
     class="mx-auto"
   >
     <v-layout>
+    
       <v-app-bar 
-        color="blue-darken-1"
+        color="#162D4B"
       >
         <template v-slot:prepend> 
           <v-btn
@@ -26,6 +27,8 @@ const auth = useAuthStore()
             Biblioteca
           </v-btn>
         </template>
+
+        
         <template v-slot:append> 
           <div v-if="auth.isAuth">
             <v-btn :to="{name:'admin-propiedades'}">
