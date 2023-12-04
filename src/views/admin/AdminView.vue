@@ -38,6 +38,7 @@ Nuevo Libro
                color ="info"
                flat
                class="mr-2"
+               :to=" {name:'editar-propiedad', params:{id: libro.id}}"
                >
                Editar
             </v-btn>

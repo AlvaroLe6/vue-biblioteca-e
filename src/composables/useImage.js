@@ -12,6 +12,7 @@ export default function useImage() {
         url,
         upload
     } = useStorageFile(storageRefPath)
+    
     function uploadImage(e) {
       const data = e.target.files[0]
         if(data){
