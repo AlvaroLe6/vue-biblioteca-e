@@ -33,7 +33,7 @@ const router = useRouter()
 
 //Obtener el Libro a editar
 const db = useFirestore()
-const docRef = doc(db,'libro',route.params.id)
+const docRef = doc(db,'libro', route.params.id)
 const libro = useDocument(docRef)
 
 watch(libro,(libro) =>
@@ -44,14 +44,19 @@ watch(libro,(libro) =>
 }
 )
 
-const submit = handleSubmit( async values =>{
+const submit = handleSubmit( async values => {
 
     const { imagen, ...libro} = values
     if(image.value){
+        const data = {
+            ...libro,
+            image: url.value
+        }
+        await updateDoc(docRef, data)
 
     }else{
         const data = {
-            libro
+            ...libro
         }
         await updateDoc(docRef, data)
     }   
