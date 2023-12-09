@@ -24,7 +24,11 @@ const {handleSubmit} = useForm({
 const titulo = useField('titulo')
 const autor = useField('autor')
 const imagen = useField('imagen')
+const areaSalud = useField('areaSalud', null, { initialValue: false })
+const areaEmpresarial = useField('areaEmpresarial', null, { initialValue: false })
+const areaLegal = useField('areaLegal', null, { initialValue: false })
 const area = useField('area',null,
+
 {
     initialValue:  false
 }
@@ -96,21 +100,21 @@ if(docRef.id){
             <v-col cols="4"> 
                 <v-checkbox 
                 label="Salud" 
-                v-model="area.value.value"
+                v-model="areaSalud.value.value"
                 :error-messages="area.errorMessage.value" 
                 />
             </v-col>
             <v-col cols="4"> 
                 <v-checkbox 
                 label="Empresarial" 
-                v-model="area.value.value"
+                v-model="areaEmpresarial.value.value"
                 :error-messages="area.errorMessage.value" 
                 />
             </v-col>
             <v-col cols="4">
                 <v-checkbox 
                 label="Legal" 
-                v-model="area.value.value"
+                v-model="areaLegal.value.value"
                 :error-messages="area.errorMessage.value" 
                 />
             </v-col>

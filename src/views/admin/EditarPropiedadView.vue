@@ -23,6 +23,9 @@ const titulo = useField('titulo')
 const autor = useField('autor')
 const imagen = useField('imagen')
 const area = useField('area')
+const areaSalud = useField('areaSalud')
+const areaLegal = useField('areaLegal')
+const areaEmpresarial = useField('areaEmpresarial')
 //-----------------------------------
 
 
@@ -40,7 +43,12 @@ watch(libro,(libro) =>
 {
     titulo.value.value = libro.titulo
     autor.value.value = libro.autor
+    
     area.value.value = libro.area
+    areaSalud.value.value = libro.areaSalud || false
+    areaLegal.value.value = libro.areaLegal || false
+    areaEmpresarial.value.value = libro.areaEmpresarial || false
+
 }
 )
 
@@ -123,21 +131,21 @@ const submit = handleSubmit( async values => {
             <v-col cols="4"> 
                 <v-checkbox 
                 label="Salud" 
-                v-model="area.value.value"
+                v-model="areaSalud.value.value"
           
                 />
             </v-col>
             <v-col cols="4"> 
                 <v-checkbox 
                 label="Empresarial" 
-                v-model="area.value.value"
+                v-model="areaEmpresarial.value.value"
               
                 />
             </v-col>
             <v-col cols="4">
                 <v-checkbox 
                 label="Legal" 
-                v-model="area.value.value"
+                v-model="areaLegal.value.value"
                 />
             </v-col>
         </v-row>
