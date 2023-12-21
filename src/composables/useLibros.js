@@ -2,7 +2,6 @@
 import {computed, ref } from 'vue'
 import { collection } from "firebase/firestore";
 import { useFirestore, useCollection } from "vuefire";
-import { query, where } from "firebase/firestore";
 
 export default function useLibros(){
 
