@@ -13,21 +13,27 @@ import useImage from '@/composables/useImage'
 import { validationSchema } from '@/validation/librosSchema'
 import { update } from 'firebase/database'
 
-const items = ["Legal", "Salud", "Empresarial"]
-
+const items = [
+  "Ingenieria",
+  "Financiera",
+  "Administrativa",
+  "Legal",
+  "Educacion",
+  "Diseño",
+  "Tecnologia",
+  "Salud",
+  "Empresarial",
+  "Social",
+];
 const { url, uploadImage, image } = useImage()
 
 const { handleSubmit } = useForm({ validationSchema });
 
-const titulo = useField('titulo')
-const autor = useField('autor')
-const imagen = useField('imagen')
-const area = useField('area')
-const areaSalud = useField('areaSalud')
-const areaLegal = useField('areaLegal')
-const areaEmpresarial = useField('areaEmpresarial')
-//-----------------------------------
-
+const titulo = useField("titulo");
+const autor = useField("autor");
+const imagen = useField("imagen");
+const areas = useField('areas');
+const descarga = useField("descarga")
 
 
 const route = useRoute()
@@ -43,11 +49,8 @@ watch(libro,(libro) =>
 {
     titulo.value.value = libro.titulo
     autor.value.value = libro.autor
-    
-    area.value.value = libro.area
-    areaSalud.value.value = libro.areaSalud || false
-    areaLegal.value.value = libro.areaLegal || false
-    areaEmpresarial.value.value = libro.areaEmpresarial || false
+    areas.value.value = libro.areas
+    descarga.value.value = libro.descarga
 
 }
 )
@@ -70,6 +73,9 @@ const submit = handleSubmit( async values => {
     }   
     router.push({name:'admin-propiedades'})
 })
+
+
+
 
 
 </script>
@@ -100,7 +106,22 @@ const submit = handleSubmit( async values => {
                 label="Autor"
                 class="mb-5"
             ></v-text-field>
+            <v-select
+        class="mb-5"
+          v-model="areas.value.value"
+          :items="items"
+          label="Seleccione el Área"
+          outlined
+          @change="handleAreaChange"
+          :error-messages="areas.errorMessage.value"
+        ></v-select>
 
+        <v-text-field
+        class="mb-5"
+        label="Link de Descarga"
+        v-model="descarga.value.value"
+        :error-messages="descarga.errorMessage.value"
+      />
             <v-col cols="12" md="4">
             <v-file-input
                 v-model="imagen.value.value"
@@ -127,28 +148,6 @@ const submit = handleSubmit( async values => {
         </v-col>
 
         <v-col cols="12" md="8">
-        <v-row>
-            <v-col cols="4"> 
-                <v-checkbox 
-                label="Salud" 
-                v-model="areaSalud.value.value"
-          
-                />
-            </v-col>
-            <v-col cols="4"> 
-                <v-checkbox 
-                label="Empresarial" 
-                v-model="areaEmpresarial.value.value"
-              
-                />
-            </v-col>
-            <v-col cols="4">
-                <v-checkbox 
-                label="Legal" 
-                v-model="areaLegal.value.value"
-                />
-            </v-col>
-        </v-row>
     </v-col>
                     <v-btn
                     color="pink-accent-3"
