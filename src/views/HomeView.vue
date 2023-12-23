@@ -1,10 +1,9 @@
 <script setup>
-
-import { ref, computed } from 'vue';
+import { ref, watch } from 'vue';
 import useLibros from "../composables/useLibros";
 import Libro from "../components/Libro.vue";
 
-const { areasSeleccionadas, librosFiltradosPorArea, librosCollection } = useLibros();
+const { areasSeleccionadas, librosFiltradosPorArea } = useLibros();
 
 const areas = [
   "Ingenieria",
@@ -18,25 +17,34 @@ const areas = [
   "Empresarial",
   "Social",
 ];
-
-
-// Modelos para el v-combobox
-const model = ref([]);
-
-// Propiedad de búsqueda para el v-combobox
+const items = ref([
+  "Ingenieria",
+  "Financiera",
+  "Administrativa",
+  "Legal",
+  "Educacion",
+  "Diseño",
+  "Tecnologia",
+  "Salud",
+  "Empresarial",
+  "Social",
+]);
+const model = ref(["Seleccionar un área"]);
 const search = ref(null);
 
-// Filtrar libros según áreas seleccionadas
-const filteredLibros = computed(() => {
-  const libros = librosCollection.value;
-  const selectedAreas = areasSeleccionadas.value;
-
-  if (!libros || libros.length === 0 || selectedAreas.length === 0) {
-    return libros; // Si no hay áreas seleccionadas, mostrar todos los libros
+watch(model, (val) => {
+  if (val.length > 5) {
+    model.value.pop();
   }
-
-  return libros.filter(libro => selectedAreas.includes(libro.area));
 });
+watch(areasSeleccionadas, (newAreas, oldAreas) => {
+  console.log('Nuevas áreas seleccionadas:', newAreas);
+});
+
+watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
+  console.log('Libros filtrados:', newLibros);
+});
+
 </script>
 
 <template>
@@ -48,10 +56,9 @@ const filteredLibros = computed(() => {
         <v-row>
           <v-container fluid>
             <v-combobox
-              v-model="model"
-              v-model:search="search"
+              v-model="areasSeleccionadas"
               :hide-no-data="false"
-              :items="items"
+              :items="areas"
               hide-selected
               hint="Máximo de 5 etiquetas"
               label="Agrega algunas etiquetas"
@@ -73,7 +80,7 @@ const filteredLibros = computed(() => {
       </v-card-title>
       <v-row>
         <Libro
-          v-for="libro in filteredLibros"
+          v-for="libro in librosFiltradosPorArea"
           :key="libro.id"
           :libro="libro"
         />
@@ -81,8 +88,28 @@ const filteredLibros = computed(() => {
     </v-card>
   </main>
 </template>
+
 <script>
-export default {
+
+
+
+/*export default {
+
+  components: {
+    Libro,
+  },
+  setup() {
+    const { areas, areasSeleccionadas, librosFiltradosPorArea } = useLibros();
+
+    // Agrega cualquier watch o propiedades computadas necesarias
+
+    return {
+      areas,
+      areasSeleccionadas,
+      librosFiltradosPorArea,
+    };
+  },
+  
   data: () => ({
     items: [
       "Ingenieria",
@@ -109,5 +136,5 @@ export default {
   },
 };
 
-
+*/
 </script>
