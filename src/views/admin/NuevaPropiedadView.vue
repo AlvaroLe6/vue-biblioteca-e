@@ -39,6 +39,22 @@ const imagen = useField("imagen");
 const areas = useField('areas');
 const descarga = useField("descarga")
 
+const handleAreaChange = (value) => {
+  // Ejemplo: Actualizar lógica en respuesta al cambio en el área seleccionada
+  console.log("Selected Area:", value);
+
+  // Puedes realizar acciones adicionales aquí según el área seleccionada
+  if (value === "Tecnologia") {
+    // Realizar alguna acción específica para el área de Tecnología
+    console.log("¡Área de Tecnología seleccionada!");
+  } else if (value === "Salud") {
+    // Realizar alguna acción específica para el área de Salud
+    console.log("¡Área de Salud seleccionada!");
+  }
+
+  // ... (otras acciones según sea necesario)
+};
+
 const submit = handleSubmit(async (values) => {
 
   const { imagen, ...libro } = values

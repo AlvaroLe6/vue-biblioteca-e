@@ -12,13 +12,12 @@ export default function useImage() {
         url,
         upload
     } = useStorageFile(storageRefPath)
-    
     function uploadImage(e) {
       const data = e.target.files[0]
         if(data){
             upload(data)
         }
-       
+      
     }
     const image = computed (() => {
         return url.value ? url.value : null

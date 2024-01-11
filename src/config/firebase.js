@@ -9,12 +9,12 @@ import { initializeApp } from 'firebase/app'
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 }*/
   const firebaseConfig = {
-    apiKey: "AIzaSyBeraY7kgSXGxVeKnGvi3X1nUt4DAR0Fg0",
-    authDomain: "vuebiblioteca-a807f.firebaseapp.com",
-    projectId: "vuebiblioteca-a807f",
-    storageBucket: "vuebiblioteca-a807f.appspot.com",
-    messagingSenderId: "626141843383",
-    appId: "1:626141843383:web:f55f29d5e6c6b41ee22232"
+    apiKey: "AIzaSyD5lwCJZFbO51Fc_w6KKrw23LgPRfXiz8c",
+    authDomain: "vuebiblioteca-1830a.firebaseapp.com",
+    projectId: "vuebiblioteca-1830a",
+    storageBucket: "vuebiblioteca-1830a.appspot.com",
+    messagingSenderId: "1071139552697",
+    appId: "1:1071139552697:web:1326bf1b7d56e6d6bc4a68"
   };
 
 export const firebaseApp = initializeApp(firebaseConfig)

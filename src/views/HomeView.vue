@@ -14,9 +14,9 @@ const areaLegal = computed(() => areasSeleccionadas.value.includes('Legal'));
 */
 
 // Variables reactivas para manejar el estado de los checkboxes
-const areaSalud = ref(false);
-const areaEmpresarial = ref(false);
-const areaLegal = ref(false);
+//const areaSalud = ref(false);
+//const areaEmpresarial = ref(false);
+//const areaLegal = ref(false);
 
 
 // Funciones para manejar cambios en las áreas seleccionadas
