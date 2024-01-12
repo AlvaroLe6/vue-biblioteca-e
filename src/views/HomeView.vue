@@ -32,8 +32,7 @@ const items = ref([
 const model = ref(["Seleccionar un área"]);
 const search = ref(null);
 
-<<<<<<< HEAD
-const { areasSeleccionadas, librosFiltradosPorArea } = useLibros(); // Obtiene los resultados de useLibros
+//const { areasSeleccionadas, librosFiltradosPorArea } = useLibros(); // Obtiene los resultados de useLibros
 
 /* Variables para manejar el estado de los checkboxes
 const areaSalud = computed(() => areasSeleccionadas.value.includes('Salud'));
@@ -69,13 +68,8 @@ const toggleArea = (area) => {
     } else if (area === 'Legal') {
       areaLegal.value = true;
     }
-=======
-watch(model, (val) => {
-  if (val.length > 5) {
-    model.value.pop();
->>>>>>> 6acdb65ae7fd9f7c4ed44a7962b236c8f149f511
   }
-});
+};
 watch(areasSeleccionadas, (newAreas, oldAreas) => {
   console.log('Nuevas áreas seleccionadas:', newAreas);
 });
