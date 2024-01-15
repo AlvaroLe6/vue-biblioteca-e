@@ -35,7 +35,7 @@ export default function useLibros(){
       return libros;
     }
   
-    return libros.filter(libro => areasSeleccionadas.value.includes(libro.area));
+    return libros.filter(libro => areasSeleccionadas.value.includes(libro.areas));
   });
 
     return{  
