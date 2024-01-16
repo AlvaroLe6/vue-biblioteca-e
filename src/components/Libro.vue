@@ -3,7 +3,17 @@ defineProps({
   libro: {
     type: Object,
   },
+  
 });
+
+const abrirEnlaceDrive = () => {
+  /*if (libro.value.descarga) {
+    window.open(libro.value.descarga, '_blank');
+  } else {
+    // Manejar el caso en el que el enlace de descarga no esté disponible
+    console.error('El enlace de descarga no está disponible para este libro.');
+  }*/
+};
 </script>
 
 <template>
@@ -21,7 +31,8 @@ defineProps({
       </v-card-text>
       <v-card-text>
         
-        <P>Area: {{ libro.areas}}</P>
+        <P>Area: {{ libro.descarga}}</P>
+
       </v-card-text>
 
       <template v-slot:actions>
@@ -31,16 +42,3 @@ defineProps({
     <!-- <h2>Libro...</h2>-->
   </v-col>
 </template>
-<script >
-
-
-
-
-const abrirEnlaceDrive = () => {
-  if (libro && libro.descarga) {
-    window.open(libro.descarga, '_blank');
-  } else {
-    console.error('Enlace de Google Drive no disponible');
-  }
-};
-</script>

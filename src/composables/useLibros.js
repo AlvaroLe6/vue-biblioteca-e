@@ -9,7 +9,7 @@ export default function useLibros(){
 
     const db = useFirestore()
     const librosCollection = useCollection(collection(db, 'libro'))
-  
+
   // Áreas disponibles
   const areas = [
     "Ingenieria",
@@ -29,8 +29,9 @@ export default function useLibros(){
 
   // Función para filtrar libros por áreas seleccionadas
   const librosFiltradosPorArea = computed(() => {
-    const libros = librosCollection.value;
-  
+    const libros = librosCollection.value
+    console.log("link de descarga de los libros..........."+ libros.descarga)
+
     if (!libros || libros.length === 0 || areasSeleccionadas.value.length === 0) {
       return libros;
     }
