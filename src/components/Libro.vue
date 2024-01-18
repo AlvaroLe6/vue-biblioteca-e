@@ -1,23 +1,17 @@
 <script setup>
+import { ref } from 'vue';
 defineProps({
   libro: {
     type: Object,
   },
   
 });
-
-const abrirEnlaceDrive = () => {
-  /*if (libro.value.descarga) {
-    window.open(libro.value.descarga, '_blank');
-  } else {
-    // Manejar el caso en el que el enlace de descarga no esté disponible
-    console.error('El enlace de descarga no está disponible para este libro.');
-  }*/
+const abrirEnlaceDescarga = (url) => {
+  window.open(url, '_blank'); // Abre la URL en una nueva pestaña
 };
 </script>
-
 <template>
-  <v-col cols="12" md="2" xs="1">
+<v-col cols="12" md="2" xs="1">
     <v-card>
       <v-img :src="libro.image" height="200" width="150"  cover />
    
@@ -27,18 +21,16 @@ const abrirEnlaceDrive = () => {
      
       <v-card-text>
 
-        <P>Autor:   {{ libro.autor }}</P>
+        <p>Autor:   {{ libro.autor }}</p>
       </v-card-text>
       <v-card-text>
-        
-        <P>Area: {{ libro.descarga}}</P>
+        <p>Area: {{ libro.areas}}</p>
 
       </v-card-text>
 
       <template v-slot:actions>
-        <v-btn @click="abrirEnlaceDrive" block color="info" variant="outlined">Descargar</v-btn>
+        <v-btn @click="abrirEnlaceDescarga(libro.descarga)" block color="info" variant="outlined">Descargar</v-btn>
       </template>
     </v-card>
-    <!-- <h2>Libro...</h2>-->
   </v-col>
 </template>

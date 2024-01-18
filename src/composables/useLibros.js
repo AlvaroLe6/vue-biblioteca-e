@@ -29,8 +29,7 @@ export default function useLibros(){
 
   // Función para filtrar libros por áreas seleccionadas
   const librosFiltradosPorArea = computed(() => {
-    const libros = librosCollection.value
-    console.log("link de descarga de los libros..........."+ libros.descarga)
+  const libros = librosCollection.value
 
     if (!libros || libros.length === 0 || areasSeleccionadas.value.length === 0) {
       return libros;

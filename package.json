@@ -9,11 +9,11 @@
   },
   "dependencies": {
     "@mdi/font": "^7.3.67",
-    "firebase": "^10.7.1",
+    "firebase": "^10.7.2",
     "pinia": "^2.1.7",
     "uid": "^2.0.2",
     "vee-validate": "^4.11.8",
-    "vue": "^3.3.8",
+    "vue": "^3.4.15",
     "vue-router": "^4.2.5",
     "vuefire": "^3.1.18",
     "vuetify": "^3.4.2"
