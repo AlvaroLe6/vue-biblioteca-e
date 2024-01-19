@@ -23,6 +23,11 @@ const router = createRouter({
       component: () => import('../views/CursosView.vue')
     },
     {
+      path: '/otrosLibros',
+      name: 'otrosLibros',
+      component: () => import('../views/OtrosLibrosView.vue')
+    },
+    {
       path: '/webinar',
       name: 'webinar',
       component: () => import('../views/WebinarView.vue')

@@ -58,6 +58,9 @@ const auth = useAuthStore()
         </v-list>
       </v-menu>
     </v-btn>
+    <v-btn :to="{name:'otrosLibros'}">
+          Otros Libros
+   </v-btn> 
         <v-btn :to="{name:'login'}">
           Iniciar Sesión
         </v-btn>  
