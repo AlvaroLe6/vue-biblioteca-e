@@ -32,22 +32,6 @@ const items = ref([
 const model = ref(["Seleccionar un área"]);
 const search = ref(null);
 
-//const { areasSeleccionadas, librosFiltradosPorArea } = useLibros(); // Obtiene los resultados de useLibros
-
-/* Variables para manejar el estado de los checkboxes
-const areaSalud = computed(() => areasSeleccionadas.value.includes('Salud'));
-const areaEmpresarial = computed(() => areasSeleccionadas.value.includes('Empresarial'));
-const areaLegal = computed(() => areasSeleccionadas.value.includes('Legal'));
-*/
-
-// Variables reactivas para manejar el estado de los checkboxes
-//const areaSalud = ref(false);
-//const areaEmpresarial = ref(false);
-//const areaLegal = ref(false);
-
-
-// Funciones para manejar cambios en las áreas seleccionadas
-// Función para manejar cambios en las áreas seleccionadas
 const toggleArea = (area) => {
   const index = areasSeleccionadas.value.indexOf(area);
   if (index !== -1) {
@@ -124,50 +108,4 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
 
 <script>
 
-
-
-/*export default {
-
-  components: {
-    Libro,
-  },
-  setup() {
-    const { areas, areasSeleccionadas, librosFiltradosPorArea } = useLibros();
-
-    // Agrega cualquier watch o propiedades computadas necesarias
-
-    return {
-      areas,
-      areasSeleccionadas,
-      librosFiltradosPorArea,
-    };
-  },
-  
-  data: () => ({
-    items: [
-      "Ingenieria",
-      "Financiera",
-      "Administrativa",
-      "Legal",
-      "Educacion",
-      "Diseño",
-      "Tecnologia",
-      "Salud",
-      "Empresarial",
-      "Social",
-    ],
-    model: ["Seleccionar un área"],
-    search: null,
-  }),
-
-  watch: {
-    model(val) {
-      if (val.length > 5) {
-        this.$nextTick(() => this.model.pop());
-      }
-    },
-  },
-};
-
-*/
 </script>

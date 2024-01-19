@@ -11,6 +11,8 @@ const abrirEnlaceDescarga = (url) => {
 };
 </script>
 <template>
+
+  
 <v-col cols="12" md="2" xs="1">
     <v-card>
       <v-img :src="libro.image" height="200" width="150"  cover />
@@ -29,8 +31,9 @@ const abrirEnlaceDescarga = (url) => {
       </v-card-text>
 
       <template v-slot:actions>
-        <v-btn @click="abrirEnlaceDescarga(libro.descarga)" block color="info" variant="outlined">Descargar</v-btn>
+        <v-btn  @click="abrirEnlaceDescarga(libro.descarga)" block color="info" variant="outlined">Descargar</v-btn>
       </template>
     </v-card>
   </v-col>
+  
 </template>

@@ -1,7 +1,4 @@
 import { initializeApp } from 'firebase/app'
-import { getDatabase } from 'firebase/database';
-
-
   const firebaseConfig = {
     apiKey: "AIzaSyAi4X9HmiWsYUvtUensrlKbSPuHUiIufWY",
     authDomain: "vuebiblioteca-82671.firebaseapp.com",
@@ -12,10 +9,5 @@ import { getDatabase } from 'firebase/database';
   };  
 
 export const firebaseApp = initializeApp(firebaseConfig)
-
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
-
-export { database };
 
 

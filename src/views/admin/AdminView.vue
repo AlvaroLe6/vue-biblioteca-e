@@ -4,7 +4,6 @@
 
    const { librosCollection} = useLibros()
 
-
 </script>
     
 <template>
