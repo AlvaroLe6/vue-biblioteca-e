@@ -23,8 +23,8 @@ const router = createRouter({
       component: () => import('../views/CursosView.vue')
     },
     {
-      path: '/otrosLibros',
-      name: 'otrosLibros',
+      path: '/otros_libros',  
+      name: 'otros_libros',
       component: () => import('../views/OtrosLibrosView.vue')
     },
     {
