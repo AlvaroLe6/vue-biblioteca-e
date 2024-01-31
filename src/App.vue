@@ -8,7 +8,59 @@ const auth = useAuthStore()
 </script>
 <template>
   <v-app>
-  <v-card 
+    <v-row>
+      <v-col  cols="2">
+        <v-list v-model:opened="open">
+      <v-list-item prepend-icon="mdi-home" title="Home"></v-list-item>
+
+      <v-list-group value="Users">
+        <template v-slot:activator="{ props }">
+          <v-list-item
+            v-bind="props"
+            prepend-icon="mdi-account-circle"
+            title="Users"
+          ></v-list-item>
+        </template>
+
+        <v-list-group value="Admin">
+          <template v-slot:activator="{ props }">
+            <v-list-item
+              v-bind="props"
+              title="Admin"
+            ></v-list-item>
+          </template>
+
+          <v-list-item
+            v-for="([title, icon], i) in admins"
+            :key="i"
+            :title="title"
+            :prepend-icon="icon"
+            :value="title"
+          ></v-list-item>
+        </v-list-group>
+
+        <v-list-group value="Actions">
+          <template v-slot:activator="{ props }">
+            <v-list-item
+              v-bind="props"
+              title="Actions"
+            ></v-list-item>
+          </template>
+
+          <v-list-item
+            v-for="([title, icon], i) in cruds"
+            :key="i"
+            :value="title"
+            :title="title"
+            :prepend-icon="icon"
+          ></v-list-item>
+        </v-list-group>
+      </v-list-group>
+    </v-list>
+      </v-col >
+  <v-col  cols="12">
+  
+      <v-card 
     elevate="3" 
     max-width="1200" 
     class="mx-auto"
@@ -73,12 +125,25 @@ const auth = useAuthStore()
         </v-container>      
       </v-main>
 </v-card>
+</v-col>
+</v-row>
 <Footer />
 </v-app>
 </template>
 <script>
   export default {
     data: () => ({
+      open: ['Users'],
+      admins: [
+        ['Management', 'mdi-account-multiple-outline'],
+        ['Settings', 'mdi-cog-outline'],
+      ],
+      cruds: [
+        ['Create', 'mdi-plus-outline'],
+        ['Read', 'mdi-file-outline'],
+        ['Update', 'mdi-update'],
+        ['Delete', 'mdi-delete'],
+      ],
       items: [
         { title: 'Curos', route:'cursos' },
         { title: 'Webinar',route:'webinar' },
