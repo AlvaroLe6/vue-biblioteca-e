@@ -60,34 +60,100 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
     <v-row justify="center">
       <v-col cols="12" md="2">
         <v-list v-model:opened="open">
-          <v-list-item prepend-icon="mdi-home" title="Categorias">
+          <v-list-item>
+            <v-list-item-content>
+              <v-list-item-icon>
+                <v-icon
+                  size="large"
+                  color="purple-darken-2"
+                  icon="mdi-dialpad"
+                ></v-icon>
+              </v-list-item-icon>
+              <v-list-item-title>Categorias</v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
-          <v-list-group value="Admin">
+          <v-list-group value="area_ingenieria">
             <template v-slot:activator="{ props }">
-              <v-list-item v-bind="props" title="Admin"></v-list-item>
+              <v-list-item
+                v-bind="props"
+                title="Área de ingeniería"
+              ></v-list-item>
             </template>
-
-            <v-list-item
-              v-for="([title, icon], i) in admins"
-              :key="i"
-              :title="title"
-              :prepend-icon="icon"
-              :value="title"
-            ></v-list-item>
           </v-list-group>
 
-          <v-list-group value="Actions">
+          <v-list-group value="area_financiera">
             <template v-slot:activator="{ props }">
-              <v-list-item v-bind="props" title="Actions"></v-list-item>
+              <v-list-item
+                v-bind="props"
+                title="Área de financiera"
+              ></v-list-item>
+            </template>
+          </v-list-group>
+          <v-list-group value="area_administrativa">
+            <template v-slot:activator="{ props }">
+              <v-list-item
+                v-bind="props"
+                title="Área de administrativa"
+              ></v-list-item>
+            </template>
+          </v-list-group>
+          <v-list-group value="area_legal">
+            <template v-slot:activator="{ props }">
+              <v-list-item v-bind="props" title="Área de legal"></v-list-item>
             </template>
 
-            <v-list-item
-              v-for="([title, icon], i) in cruds"
-              :key="i"
-              :value="title"
-              :title="title"
-              :prepend-icon="icon"
-            ></v-list-item>
+           
+          </v-list-group>
+          <v-list-group value="area_educacion">
+            <template v-slot:activator="{ props }">
+              <v-list-item
+                v-bind="props"
+                title="Área de educacion"
+              ></v-list-item>
+            </template>
+
+            
+          </v-list-group>
+          <v-list-group value="area_diseno">
+            <template v-slot:activator="{ props }">
+              <v-list-item v-bind="props" title="Área de diseño"></v-list-item>
+            </template>
+
+           
+          </v-list-group>
+          <v-list-group value="area_tecnologia">
+            <template v-slot:activator="{ props }">
+              <v-list-item
+                v-bind="props"
+                title="Área de tecnologia"
+              ></v-list-item>
+            </template>
+
+            
+          </v-list-group>
+          <v-list-group value="area_salud">
+            <template v-slot:activator="{ props }">
+              <v-list-item v-bind="props" title="Área de salud"></v-list-item>
+            </template>
+
+           
+          </v-list-group>
+          <v-list-group value="area_empresarial">
+            <template v-slot:activator="{ props }">
+              <v-list-item
+                v-bind="props"
+                title="Área de empresarial"
+              ></v-list-item>
+            </template>
+
+        
+          </v-list-group>
+          <v-list-group value="area_social">
+            <template v-slot:activator="{ props }">
+              <v-list-item v-bind="props" title="Área de social"></v-list-item>
+            </template>
+
+        
           </v-list-group>
         </v-list>
       </v-col>
@@ -136,17 +202,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
 <script>
 export default {
   data: () => ({
-    open: ["Áreas"],
-    admins: [
-      ["Management", "mdi-account-multiple-outline"],
-      ["Settings", "mdi-cog-outline"],
-    ],
-    cruds: [
-      ["Create", "mdi-plus-outline"],
-      ["Read", "mdi-file-outline"],
-      ["Update", "mdi-update"],
-      ["Delete", "mdi-delete"],
-    ],
+    open: ["Áreas"]
   }),
 };
 </script>
