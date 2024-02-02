@@ -2,6 +2,8 @@
 import { ref, watch } from "vue";
 import useLibros from "../composables/useLibros";
 import Libro from "../components/Libro.vue";
+import SvgIcon from '@jamescoyle/vue-icon'
+import { mdiAccount } from '@mdi/js'
 
 const { areasSeleccionadas, librosFiltradosPorArea } = useLibros();
 
@@ -59,106 +61,131 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
     </v-row>
     <v-row justify="center">
       <v-col cols="12" md="2">
-        <v-list v-model:opened="open">
+        <v-list class="custom-list-item" v-model:opened="open">
           <v-list-item>
             <v-list-item-content>
-              <v-list-item-icon>
-                <v-icon
-                  size="large"
-                  color="purple-darken-2"
-                  icon="mdi-dialpad"
-                ></v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>Categorias</v-list-item-title>
+              <v-list-item-title> <v-icon
+                size="large"
+                color="green-darken-2"
+                icon="mdi-dialpad"
+              ></v-icon>Categorias</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-group value="area_ingenieria">
-            <template v-slot:activator="{ props }">
-              <v-list-item
-                v-bind="props"
-                title="Área de ingeniería"
-              ></v-list-item>
-            </template>
-          </v-list-group>
 
-          <v-list-group value="area_financiera">
-            <template v-slot:activator="{ props }">
-              <v-list-item
-                v-bind="props"
-                title="Área de financiera"
-              ></v-list-item>
-            </template>
-          </v-list-group>
-          <v-list-group value="area_administrativa">
-            <template v-slot:activator="{ props }">
-              <v-list-item
-                v-bind="props"
-                title="Área de administrativa"
-              ></v-list-item>
-            </template>
-          </v-list-group>
-          <v-list-group value="area_legal">
-            <template v-slot:activator="{ props }">
-              <v-list-item v-bind="props" title="Área de legal"></v-list-item>
-            </template>
+          <!-- Lista area ingenieria-->
+          <v-list-item @click="toggleArea('Ingenieria')">
+            <v-list-item-content>
+            <v-list-item-title><v-icon
+                class="custom-list-icon"
+                size="large"
+                color="green-darken-2"
+                icon="mdi-domain"
+              ></v-icon>Área de ingeniería</v-list-item-title>
+          </v-list-item-content>
+          </v-list-item>
 
-           
-          </v-list-group>
-          <v-list-group value="area_educacion">
-            <template v-slot:activator="{ props }">
-              <v-list-item
-                v-bind="props"
-                title="Área de educacion"
-              ></v-list-item>
-            </template>
+          <!-- Lista area financiera-->
+          <v-list-item @click="toggleArea('Financiera')">
+            <v-list-item-content>
+              <v-list-item-title><svg-icon type="mdi" :path="path"></svg-icon>Área de financiera</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          
 
-            
-          </v-list-group>
-          <v-list-group value="area_diseno">
-            <template v-slot:activator="{ props }">
-              <v-list-item v-bind="props" title="Área de diseño"></v-list-item>
-            </template>
+          <!-- Lista area administrativa-->
+          <v-list-item @click="toggleArea('Administrativa')">
+            <v-list-group value="area_administrativa">
+              <template v-slot:activator="{ props }">
+                <v-list-item
+                  v-bind="props"
+                  title="Área de administrativa"
+                ></v-list-item>
+              </template>
+            </v-list-group>
+          </v-list-item>
 
-           
-          </v-list-group>
-          <v-list-group value="area_tecnologia">
-            <template v-slot:activator="{ props }">
-              <v-list-item
-                v-bind="props"
-                title="Área de tecnologia"
-              ></v-list-item>
-            </template>
+          <!-- Lista area legal-->
+          <v-list-item @click="toggleArea('Legal')">
+            <v-list-group value="area_legal">
+              <template v-slot:activator="{ props }">
+                <v-list-item v-bind="props" title="Área de legal"></v-list-item>
+              </template>
+            </v-list-group>
+          </v-list-item>
 
-            
-          </v-list-group>
-          <v-list-group value="area_salud">
-            <template v-slot:activator="{ props }">
-              <v-list-item v-bind="props" title="Área de salud"></v-list-item>
-            </template>
+          <!-- Lista area educacion-->
+          <v-list-item @click="toggleArea('Educacion')">
+            <v-list-group value="area_educacion">
+              <template v-slot:activator="{ props }">
+                <v-list-item
+                  v-bind="props"
+                  title="Área de educacion"
+                ></v-list-item>
+              </template>
+            </v-list-group>
+          </v-list-item>
 
-           
-          </v-list-group>
-          <v-list-group value="area_empresarial">
-            <template v-slot:activator="{ props }">
-              <v-list-item
-                v-bind="props"
-                title="Área de empresarial"
-              ></v-list-item>
-            </template>
+          <!-- Lista area diseño-->
+          <v-list-item @click="toggleArea('Diseño')">
+            <v-list-group value="area_diseno">
+              <template v-slot:activator="{ props }">
+                <v-list-item
+                  v-bind="props"
+                  title="Área de diseño"
+                ></v-list-item>
+              </template>
+            </v-list-group>
+          </v-list-item>
 
-        
-          </v-list-group>
-          <v-list-group value="area_social">
-            <template v-slot:activator="{ props }">
-              <v-list-item v-bind="props" title="Área de social"></v-list-item>
-            </template>
+          <!-- Lista area tecnologia-->
+          <v-list-item @click="toggleArea('Tecnologia')">
+            <v-list-group value="area_tecnologia">
+              <template v-slot:activator="{ props }">
+                <v-list-item
+                  v-bind="props"
+                  title="Área de tecnologia"
+                ></v-list-item>
+              </template>
+            </v-list-group>
+          </v-list-item>
 
-        
-          </v-list-group>
+          <!-- Lista area salud-->
+          <v-list-item @click="toggleArea('Salud')">
+            <v-list-group value="area_salud">
+              <template v-slot:activator="{ props }">
+                <v-list-item v-bind="props" title="Área de salud"></v-list-item>
+              </template>
+            </v-list-group>
+          </v-list-item>
+
+          <!-- Lista area empresarial-->
+          <v-list-item @click="toggleArea('Empresarial')">
+            <v-list-group value="area_empresarial">
+              <template v-slot:activator="{ props }">
+                <v-list-item
+                  v-bind="props"
+                  title="Área de empresarial"
+                ></v-list-item>
+              </template>
+            </v-list-group>
+          </v-list-item>
+
+          <!-- Lista area social-->
+          <v-list-item @click="toggleArea('Social')">
+            <v-list-group value="area_social">
+              <template v-slot:activator="{ props }">
+                <v-list-item
+                  v-bind="props"
+                  title="Área de social"
+                ></v-list-item>
+              </template>
+            </v-list-group>
+          </v-list-item>
         </v-list>
+        <!-- ------------------------------------ -->
       </v-col>
       <v-col cols="12" md="10">
-        <v-card flat class="py-10">
+        <v-card flat class="card_libros py-10">
           <v-card-title class="text-h5">
             Búsqueda
             <v-row>
@@ -200,9 +227,44 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
 </template>
 
 <script>
+import SvgIcon from '@jamescoyle/vue-icon';
+import { mdiAccount } from '@mdi/js';
 export default {
-  data: () => ({
-    open: ["Áreas"]
-  }),
-};
+	name: "my-cool-component",
+
+	components: {
+		SvgIcon
+	},
+
+	data() {
+		return {
+	  		path: mdiAccount,
+		}
+	}
+}
 </script>
+<style scoped>
+.custom-list-item {
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background-color: #162d4b; /* Fondo a la lista */
+  color: #fff; /* Texto blanco de la lista*/
+}
+
+.custom-list-item:hover {
+  background-color: #264978; /* Cambio de color al pasar el ratón por la lista*/
+}
+
+.custom-list-icon {
+  margin-right: 8px;
+}
+
+.card_libros {
+  border: 2px solid #162d4b;
+  padding: 2px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+</style>
