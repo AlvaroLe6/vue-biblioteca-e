@@ -74,7 +74,10 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
 
           <!-- Lista area ingenieria-->
           <v-list-item  @click="toggleArea('Ingenieria')">
-            <v-list-item-content class="d-flex flex-column align-center">
+          <!--  <v-list-item-content class="d-flex flex-column align-center" >-->
+              <v-list-item-content 
+              >
+
             <v-list-item-title class="list-item-title"><v-icon
                 class="custom-list-icon"
                 size="large"
