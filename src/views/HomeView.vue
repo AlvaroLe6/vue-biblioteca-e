@@ -62,9 +62,9 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
     <v-row justify="center">
       <v-col cols="12" md="2">
         <v-list class="custom-list-item" v-model:opened="open">
-          <v-list-item>
+          <v-list-item class="list-item">
             <v-list-item-content>
-              <v-list-item-title> <v-icon
+              <v-list-item-title > <v-icon
                 size="large"
                 color="green-darken-2"
                 icon="mdi-dialpad"
@@ -73,9 +73,9 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
           </v-list-item>
 
           <!-- Lista area ingenieria-->
-          <v-list-item @click="toggleArea('Ingenieria')">
-            <v-list-item-content>
-            <v-list-item-title><v-icon
+          <v-list-item  @click="toggleArea('Ingenieria')">
+            <v-list-item-content class="d-flex flex-column align-center">
+            <v-list-item-title class="list-item-title"><v-icon
                 class="custom-list-icon"
                 size="large"
                 color="green-darken-2"
@@ -87,105 +87,116 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
           <!-- Lista area financiera-->
           <v-list-item @click="toggleArea('Financiera')">
             <v-list-item-content>
-              <v-list-item-title><svg-icon type="mdi" :path="path"></svg-icon>Área de financiera</v-list-item-title>
+              <v-list-item-title class="list-item-title"><v-icon
+                class="custom-list-icon"
+                size="large"
+                color="green-darken-2"
+                icon="mdi-domain"
+              ></v-icon>Área de financiera</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
           
 
           <!-- Lista area administrativa-->
           <v-list-item @click="toggleArea('Administrativa')">
-            <v-list-group value="area_administrativa">
-              <template v-slot:activator="{ props }">
-                <v-list-item
-                  v-bind="props"
-                  title="Área de administrativa"
-                ></v-list-item>
-              </template>
-            </v-list-group>
+            <v-list-item-content>
+              <v-list-item-title class="list-item-title"><v-icon
+                class="custom-list-icon"
+                size="large"
+                color="green-darken-2"
+                icon="mdi-domain"
+              ></v-icon>Área de administrativa</v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
 
           <!-- Lista area legal-->
           <v-list-item @click="toggleArea('Legal')">
-            <v-list-group value="area_legal">
-              <template v-slot:activator="{ props }">
-                <v-list-item v-bind="props" title="Área de legal"></v-list-item>
-              </template>
-            </v-list-group>
+            <v-list-item-content>
+              <v-list-item-title class="list-item-title"><v-icon
+                class="custom-list-icon"
+                size="large"
+                color="green-darken-2"
+                icon="mdi-domain"
+              ></v-icon>Área de legal</v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
 
           <!-- Lista area educacion-->
           <v-list-item @click="toggleArea('Educacion')">
-            <v-list-group value="area_educacion">
-              <template v-slot:activator="{ props }">
-                <v-list-item
-                  v-bind="props"
-                  title="Área de educacion"
-                ></v-list-item>
-              </template>
-            </v-list-group>
+            <v-list-item-content>
+              <v-list-item-title class="list-item-title"><v-icon
+                class="custom-list-icon"
+                size="large"
+                color="green-darken-2"
+                icon="mdi-domain"
+              ></v-icon>Área de educación</v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
 
           <!-- Lista area diseño-->
           <v-list-item @click="toggleArea('Diseño')">
-            <v-list-group value="area_diseno">
-              <template v-slot:activator="{ props }">
-                <v-list-item
-                  v-bind="props"
-                  title="Área de diseño"
-                ></v-list-item>
-              </template>
-            </v-list-group>
+            <v-list-item-content>
+              <v-list-item-title class="list-item-title"><v-icon
+                class="custom-list-icon"
+                size="large"
+                color="green-darken-2"
+                icon="mdi-domain"
+              ></v-icon>Área de diseño</v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
 
           <!-- Lista area tecnologia-->
           <v-list-item @click="toggleArea('Tecnologia')">
-            <v-list-group value="area_tecnologia">
-              <template v-slot:activator="{ props }">
-                <v-list-item
-                  v-bind="props"
-                  title="Área de tecnologia"
-                ></v-list-item>
-              </template>
-            </v-list-group>
+            <v-list-item-content>
+              <v-list-item-title class="list-item-title body-2"><v-icon
+                class="custom-list-icon"
+                size="large"
+                color="green-darken-2"
+                icon="mdi-domain"
+              ></v-icon>Área de tecnologia</v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
 
           <!-- Lista area salud-->
           <v-list-item @click="toggleArea('Salud')">
-            <v-list-group value="area_salud">
-              <template v-slot:activator="{ props }">
-                <v-list-item v-bind="props" title="Área de salud"></v-list-item>
-              </template>
-            </v-list-group>
+            <v-list-item-content>
+              <v-list-item-title class="list-item-title"><v-icon
+                class="custom-list-icon"
+                size="large"
+                color="green-darken-2"
+                icon="mdi-domain"
+              ></v-icon>Área de salud</v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
 
           <!-- Lista area empresarial-->
           <v-list-item @click="toggleArea('Empresarial')">
-            <v-list-group value="area_empresarial">
-              <template v-slot:activator="{ props }">
-                <v-list-item
-                  v-bind="props"
-                  title="Área de empresarial"
-                ></v-list-item>
-              </template>
-            </v-list-group>
+            <v-list-item-content>
+              <v-list-item-title class="list-item-title"><v-icon
+                class="custom-list-icon"
+                size="large"
+                color="green-darken-2"
+                icon="mdi-domain"
+              ></v-icon>Área de empresarial</v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
 
           <!-- Lista area social-->
           <v-list-item @click="toggleArea('Social')">
-            <v-list-group value="area_social">
-              <template v-slot:activator="{ props }">
-                <v-list-item
-                  v-bind="props"
-                  title="Área de social"
-                ></v-list-item>
-              </template>
-            </v-list-group>
+            <v-list-item-content>
+              <v-list-item-title class="list-item-title"><v-icon
+                class="custom-list-icon"
+                size="large"
+                color="green-darken-2"
+                icon="mdi-domain"
+              ></v-icon>Área de social</v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
         </v-list>
         <!-- ------------------------------------ -->
       </v-col>
       <v-col cols="12" md="10">
-        <v-card flat class="card_libros py-10">
+        <v-card flat class="card-libros py-10">
           <v-card-title class="text-h5">
             Búsqueda
             <v-row>
@@ -261,10 +272,17 @@ export default {
   margin-right: 8px;
 }
 
-.card_libros {
+.card-libros {
   border: 2px solid #162d4b;
   padding: 2px;
   border-radius: 8px;
   margin-bottom: 8px;
+}
+.list-item-title {
+  border: 2px solid #dce3ec;
+  padding: 5px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
 }
 </style>
