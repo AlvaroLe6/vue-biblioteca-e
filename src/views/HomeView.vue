@@ -66,7 +66,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
             <v-list-item-content>
               <v-list-item-title > <v-icon
                 size="large"
-                color="green-darken-2"
+                color="orange-darken-2"
                 icon="mdi-dialpad"
               ></v-icon>Categorias</v-list-item-title>
             </v-list-item-content>
@@ -79,7 +79,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
             <v-list-item-title class="list-item-title"><v-icon
                 class="custom-list-icon"
                 size="large"
-                color="green-darken-2"
+                color="orange-darken-2"
                 icon="mdi-domain"
               ></v-icon>Área de ingeniería</v-list-item-title>
           </v-list-item-content>
@@ -91,7 +91,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
               <v-list-item-title class="list-item-title"><v-icon
                 class="custom-list-icon"
                 size="large"
-                color="green-darken-2"
+                color="orange-darken-2"
                 icon="mdi-domain"
               ></v-icon>Área de financiera</v-list-item-title>
             </v-list-item-content>
@@ -104,7 +104,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
               <v-list-item-title class="list-item-title"><v-icon
                 class="custom-list-icon"
                 size="large"
-                color="green-darken-2"
+                color="orange-darken-2"
                 icon="mdi-domain"
               ></v-icon>Área de administrativa</v-list-item-title>
             </v-list-item-content>
@@ -116,7 +116,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
               <v-list-item-title class="list-item-title"><v-icon
                 class="custom-list-icon"
                 size="large"
-                color="green-darken-2"
+                color="orange-darken-2"
                 icon="mdi-domain"
               ></v-icon>Área de legal</v-list-item-title>
             </v-list-item-content>
@@ -128,7 +128,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
               <v-list-item-title class="list-item-title"><v-icon
                 class="custom-list-icon"
                 size="large"
-                color="green-darken-2"
+                color="orange-darken-2"
                 icon="mdi-domain"
               ></v-icon>Área de educación</v-list-item-title>
             </v-list-item-content>
@@ -140,7 +140,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
               <v-list-item-title class="list-item-title"><v-icon
                 class="custom-list-icon"
                 size="large"
-                color="green-darken-2"
+                color="orange-darken-2"
                 icon="mdi-domain"
               ></v-icon>Área de diseño</v-list-item-title>
             </v-list-item-content>
@@ -152,7 +152,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
               <v-list-item-title class="list-item-title body-2"><v-icon
                 class="custom-list-icon"
                 size="large"
-                color="green-darken-2"
+                color="orange-darken-2"
                 icon="mdi-domain"
               ></v-icon>Área de tecnologia</v-list-item-title>
             </v-list-item-content>
@@ -164,7 +164,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
               <v-list-item-title class="list-item-title"><v-icon
                 class="custom-list-icon"
                 size="large"
-                color="green-darken-2"
+                color="orange-darken-2"
                 icon="mdi-domain"
               ></v-icon>Área de salud</v-list-item-title>
             </v-list-item-content>
@@ -176,7 +176,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
               <v-list-item-title class="list-item-title"><v-icon
                 class="custom-list-icon"
                 size="large"
-                color="green-darken-2"
+                color="orange-darken-2"
                 icon="mdi-domain"
               ></v-icon>Área de empresarial</v-list-item-title>
             </v-list-item-content>
@@ -188,7 +188,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
               <v-list-item-title class="list-item-title"><v-icon
                 class="custom-list-icon"
                 size="large"
-                color="green-darken-2"
+                color="orange-darken-2"
                 icon="mdi-domain"
               ></v-icon>Área de social</v-list-item-title>
             </v-list-item-content>
