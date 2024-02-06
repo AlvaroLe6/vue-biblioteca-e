@@ -11,9 +11,8 @@ const abrirEnlaceDescarga = (url) => {
 };
 </script>
 <template>
-
   
-<v-col cols="12" md="2" xs="1">
+<v-col cols="12" lg="2" md="3" sm="4" xs="6">
     <v-card>
       <v-img :src="libro.image" height="200" width="150"  cover />
    

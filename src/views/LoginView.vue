@@ -17,7 +17,7 @@ const submit = handleSubmit((values) => {
 </script>
 
 <template>
-  <v-card flat max-width="600" class="mx-auto my-10">
+  <v-card flat max-width="600" class="card-login mx-auto my-10">
     <v-card-title class="text-h4 font-weight-bold" tag="h3">
       Iniciar Sesión
     </v-card-title>
@@ -53,3 +53,11 @@ const submit = handleSubmit((values) => {
     </v-form>
   </v-card>
 </template>
+<style>
+.card-login {
+  border: 1px solid #162d4b;
+  padding: 50px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+</style>

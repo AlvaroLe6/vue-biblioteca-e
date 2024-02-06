@@ -1,23 +1,13 @@
 <template>
-  <div v-if="libros && libros.length > 0">
-</div>
-    <div>
-      <h1>Consulta de OpenLibrary API</h1>
-      <button @click="consultarLibros">Consultar Libros</button>
-      <div v-if="libros.length > 0">
-        <h2>Resultados:</h2>
-        <ul>
-          <li v-for="libro in libros" :key="libro.key">
-            {{ libro.title }}
-          </li>
-        </ul>
-      </div>
-    </div>
+  <v-row justify="center">
+      <img src="@/assets/portada.jpeg" />
+    </v-row>
   </template>
-  
-  <script>
+ 
+ <script>
+   /*
   import axios from 'axios';
-  
+ 
   export default {
     data() {
       return {
@@ -44,5 +34,6 @@
   });
       },
     },
-  };
+  };*/
   </script>
+  

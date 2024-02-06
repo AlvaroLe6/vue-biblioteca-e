@@ -64,7 +64,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
         <v-list class="custom-list-item" v-model:opened="open">
           <v-list-item class="list-item">
             <v-list-item-content>
-              <v-list-item-title > <v-icon
+              <v-list-item-title class="list-item-title-cat" > <v-icon
                 size="large"
                 color="orange-darken-2"
                 icon="mdi-dialpad"
@@ -225,7 +225,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
               </v-container>
             </v-row>
           </v-card-title>
-          <v-row>
+          <v-row >
             <Libro
               v-for="libro in librosFiltradosPorArea"
               :key="libro.id"
@@ -256,6 +256,15 @@ export default {
 }
 </script>
 <style scoped>
+/*
+.list-item {
+  background-color: white;
+}
+
+.list-item-title-cat {
+  color: #162d4b;  
+}
+*/
 .custom-list-item {
   cursor: pointer;
   transition: background-color 0.3s;

@@ -2,9 +2,10 @@
 
 <template>
 
-  
-<v-col cols="12" md="2" xs="1">
-   
-  </v-col>
+<v-row justify="center">
+      <img src="@/assets/portada.jpeg" />
+    </v-row>
+
+
   
 </template>
