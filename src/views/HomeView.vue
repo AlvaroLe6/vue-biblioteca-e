@@ -57,7 +57,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
 <template>
   <main>
     <v-row justify="center">
-      <h1 class="text-center text-h3 font-weight-bold my-5">Biblioteca</h1>
+      <img src="@/assets/portada.jpeg" />
     </v-row>
     <v-row justify="center">
       <v-col cols="12" md="2">
