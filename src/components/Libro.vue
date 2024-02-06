@@ -13,8 +13,8 @@ const abrirEnlaceDescarga = (url) => {
 <template>
   
 <v-col cols="12" lg="2" md="3" sm="4" xs="6">
-    <v-card>
-      <v-img :src="libro.image" height="200" width="150"  cover />
+    <v-card class="card-img">
+      <v-img  :src="libro.image" height="200" width="150"  class="mx-auto" cover />
    
       <v-card-text>
         <p><strong>Título: {{ libro.titulo}}</strong></p>
@@ -30,9 +30,20 @@ const abrirEnlaceDescarga = (url) => {
       </v-card-text>
 
       <template v-slot:actions>
-        <v-btn  @click="abrirEnlaceDescarga(libro.descarga)" block color="info" variant="tonal">Descargar</v-btn>
+        <v-btn  @click="abrirEnlaceDescarga(libro.descarga)" block color="orange" variant="tonal">Descargar</v-btn>
       </template>
     </v-card>
   </v-col>
   
 </template>
+<style scoped>
+.card-img {
+  background-color: #ffd78d10;
+  margin: 4px; /* Ajusta el margen según lo necesites */
+  border: 1px solid #ffa500;
+  padding: 2px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+</style>

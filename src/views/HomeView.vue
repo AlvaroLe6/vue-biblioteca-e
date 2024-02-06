@@ -67,7 +67,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
               <v-list-item-title class="list-item-title-cat" > <v-icon
                 size="large"
                 color="orange-darken-2"
-                icon="mdi-dialpad"
+                icon="mdi-book-open-variant"
               ></v-icon>Categorias</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -80,7 +80,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
                 class="custom-list-icon"
                 size="large"
                 color="orange-darken-2"
-                icon="mdi-domain"
+                icon="mdi-desktop-classic"
               ></v-icon>Área de ingeniería</v-list-item-title>
           </v-list-item-content>
           </v-list-item>
@@ -92,7 +92,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
                 class="custom-list-icon"
                 size="large"
                 color="orange-darken-2"
-                icon="mdi-domain"
+                icon="mdi-cash-multiple"
               ></v-icon>Área de financiera</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -105,7 +105,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
                 class="custom-list-icon"
                 size="large"
                 color="orange-darken-2"
-                icon="mdi-domain"
+                icon="mdi-account-multiple"
               ></v-icon>Área de administrativa</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -117,7 +117,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
                 class="custom-list-icon"
                 size="large"
                 color="orange-darken-2"
-                icon="mdi-domain"
+                icon="mdi-scale-balance"
               ></v-icon>Área de legal</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -129,7 +129,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
                 class="custom-list-icon"
                 size="large"
                 color="orange-darken-2"
-                icon="mdi-domain"
+                icon="mdi-school"
               ></v-icon>Área de educación</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -141,7 +141,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
                 class="custom-list-icon"
                 size="large"
                 color="orange-darken-2"
-                icon="mdi-domain"
+                icon="mdi-palette"
               ></v-icon>Área de diseño</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -153,7 +153,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
                 class="custom-list-icon"
                 size="large"
                 color="orange-darken-2"
-                icon="mdi-domain"
+                icon="mdi-monitor-dashboard"
               ></v-icon>Área de tecnologia</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -165,7 +165,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
                 class="custom-list-icon"
                 size="large"
                 color="orange-darken-2"
-                icon="mdi-domain"
+                icon="mdi-hospital-building"
               ></v-icon>Área de salud</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -189,7 +189,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
                 class="custom-list-icon"
                 size="large"
                 color="orange-darken-2"
-                icon="mdi-domain"
+                icon="mdi-human-greeting"
               ></v-icon>Área de social</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -237,6 +237,7 @@ watch(librosFiltradosPorArea, (newLibros, oldLibros) => {
     </v-row>
   </main>
 </template>
+
 
 <script>
 import SvgIcon from '@jamescoyle/vue-icon';
