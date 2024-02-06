@@ -32,7 +32,11 @@ const submit = handleSubmit((values) => {
       :title="auth.errorMsg"
     ></v-alert>
 
+<<<<<<< HEAD
     <v-form class="mt-5"> 
+=======
+    <v-form class="mt-5">
+>>>>>>> 7ac7ffc201421fd5a76aa08f83919b617a4d38ac
       <v-text-field
         type="email"
         label="Email"

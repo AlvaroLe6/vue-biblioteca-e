@@ -31,7 +31,11 @@ const abrirEnlaceDescarga = (url) => {
       </v-card-text>
 
       <template v-slot:actions>
+<<<<<<< HEAD
         <v-btn  @click="abrirEnlaceDescarga(libro.descarga)" block color="info" variant="tonal">Descargar</v-btn>
+=======
+        <v-btn  @click="abrirEnlaceDescarga(libro.descarga)" block color="info" variant="outlined">Descargar</v-btn>
+>>>>>>> 7ac7ffc201421fd5a76aa08f83919b617a4d38ac
       </template>
     </v-card>
   </v-col>
