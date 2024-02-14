@@ -11,6 +11,7 @@ export const useAuthStore = defineStore('auth', () => {
     const authUser = ref(null)
     const router = useRouter()
  
+
     const errorMsg = ref('')
     const errorCodes = {
         'auth/user-not-found': 'Usuario no encontrado',
@@ -54,7 +55,8 @@ export const useAuthStore = defineStore('auth', () => {
     }
 
     const hasError = computed(() => {
-        return errorMsg.value
+        return errorMsg.value !== ''
+
     })
 
     const isAuth = computed(() => {

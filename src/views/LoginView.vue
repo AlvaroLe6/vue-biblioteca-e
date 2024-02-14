@@ -1,63 +1,50 @@
-<script setup>
-import { useForm, useField } from "vee-validate";
-import { loginSchema as validationSchema } from "../validation/loginSchema";
-import { useAuthStore } from "../stores/auth";
+<script setup >
 
-const { handleSubmit } = useForm({ validationSchema });
-const auth = useAuthStore();
-
-const email = useField("email");
-const password = useField("password");
-
-// console.log(email)
-
-const submit = handleSubmit((values) => {
-  auth.login(values);
-});
+import LoginForm from '@/components/LoginForm.vue';
 </script>
-
 <template>
-  <v-card flat max-width="600" class="card-login mx-auto my-10">
-    <v-card-title class="text-h4 font-weight-bold" tag="h3">
-      Iniciar Sesión
-    </v-card-title>
-    <v-card-subtitle class="text-h5">
-      Iniciar Sesión con tu cuenta
-    </v-card-subtitle>
-
-    <v-alert
-      v-if="auth.hasError"
-      class="my-5"
-      type="error"
-      :title="auth.errorMsg"
-    ></v-alert>
-
-    <v-form class="mt-5"> 
-      <v-text-field
-        type="email"
-        label="Email"
-        bg-color="blue-grey-lighten-5"
-        class="mb-3"
-        v-model="email.value.value"
-        :error-messages="email.errorMessage.value"
-      />
-      <v-text-field
-        type="password"
-        label="Password"
-        bg-color="blue-grey-lighten-5"
-        class="mb-3"
-        v-model="password.value.value"
-        :error-messages="password.errorMessage.value"
-      />
-      <v-btn block color="pink" @click="submit"> Iniciar Sesión </v-btn>
-    </v-form>
-  </v-card>
+    <div class="authentication">
+        <v-container 
+        fluid class="pa-3">
+            <v-row 
+            class="h-100vh d-flex justify-center align-center">
+                <v-col 
+                cols="12" 
+                lg="4" 
+                xl="3" 
+                class="d-flex align-center">
+                    <v-card rounded="md" 
+                    elevation="10" 
+                    class="px-sm-1 px-0 withbg mx-auto" 
+                    max-width="500">
+                        <v-card-item 
+                        class="pa-sm-8">
+                            <div class="d-flex justify-center py-4">
+                                <img
+              src="@/assets/ESCUELA DE NEGOCIOS_Mesa de trabajo 1.png"
+              alt="80"
+              height="80"
+            />
+                            </div>
+                            <div class="text-body-1 text-muted text-center mb-3">Iniciar Sesión</div>
+                            <LoginForm />
+                            <h6 
+                            class="text-h6 text-muted font-weight-medium d-flex justify-center align-center mt-3">
+                                ¿Nuevo en Esam?
+                                <RouterLink to="/auth/register"
+                                    class="text-primary text-decoration-none text-body-1 opacity-1 font-weight-medium pl-2">
+                                    Crea una cuenta</RouterLink>
+                            </h6>
+                        </v-card-item>
+                    </v-card>
+                </v-col>
+            </v-row>
+        </v-container>
+    </div>
 </template>
 <style>
-.card-login {
-  border: 1px solid #162d4b;
-  padding: 50px;
-  border-radius: 8px;
-  margin-bottom: 8px;
+div.authentication .text-body-1{
+    font-size: 24px;
+    font-weight: bold;
 }
 </style>

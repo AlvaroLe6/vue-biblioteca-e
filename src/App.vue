@@ -62,7 +62,7 @@ const auth = useAuthStore();
 export default {
   data: () => ({
     items: [
-      { title: "Curos", route: "cursos" },
+      { title: "Cursos", route: "cursos" },
       { title: "Webinar", route: "webinar" },
     ],
   }),
