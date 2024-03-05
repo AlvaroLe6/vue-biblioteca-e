@@ -15,7 +15,6 @@ const password = useField("password");
  
 const submit = handleSubmit((values) => {
   auth.login(values);
-  console.log("logggggggg",auth.hasError)
 });
 </script>
 

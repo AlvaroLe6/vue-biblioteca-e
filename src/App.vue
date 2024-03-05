@@ -2,6 +2,8 @@
 import Footer from "@/views/Footer.vue";
 import { RouterView } from "vue-router";
 import { useAuthStore } from "./stores/auth";
+import UserProfile from '@/layouts/UserProfile.vue'
+
 
 const auth = useAuthStore();
 </script>
@@ -20,10 +22,20 @@ const auth = useAuthStore();
         </v-toolbar-title>
 
         <template v-slot:append>
-          <div v-if="auth.isAuth">
-            <v-btn :to="{ name: 'admin-propiedades' }"> Admin </v-btn>
-            <v-btn :to="{ name: 'home' }"> Inicio </v-btn>
-            <v-btn @click="auth.logout"> cerrar Sesión </v-btn>
+          <div 
+          class="container"
+          v-if="auth.isAuth" 
+          >
+            <v-btn :to="{ name: 'admin-propiedades' }" 
+            class="button"> 
+            Admin 
+          </v-btn>
+            <v-btn :to="{ name: 'home' }"
+            class="button"
+            > Inicio 
+          </v-btn>
+            <UserProfile />
+      
           </div>
           <div v-else>
             <v-btn :to="{ name: 'home' }"> Inicio </v-btn>
@@ -46,6 +58,7 @@ const auth = useAuthStore();
             <v-btn :to="{ name: 'otros_libros' }"> Otros Libros </v-btn>
             <v-btn :to="{ name: 'login' }"> Iniciar Sesión </v-btn>
           </div>
+      
         </template>
       </v-app-bar>
       <v-main style="margin-bottom: 50px">
@@ -73,3 +86,12 @@ export default {
   },
 };
 </script>
+<style>
+.container {
+    text-align: center;
+}
+
+.button {
+    margin-bottom: 10px;
+}
+</style>

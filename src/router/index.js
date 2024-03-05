@@ -12,15 +12,21 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },
+    /* ------- Login antiguo
     {
       path: '/login-1',
       name: 'login-1',
       component: () => import('../views/LoginView-1.vue')
-    },
+    },*/
     {
       path: '/login',
       name: 'login',
       component: () => import('../views/LoginView.vue')
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import('../views/RegisterView.vue')
     },
     {
       path: '/cursos',
